@@ -6,7 +6,9 @@ const Stripe = require("stripe");
 const admin = require("firebase-admin");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
-const stripe = Stripe(process.env.PAYMENT_KEY);
+const stripe = process.env.PAYMENT_KEY
+  ? Stripe(process.env.PAYMENT_KEY)
+  : null;
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -98,6 +100,11 @@ app.get("/", (req, res) => res.send("Parcel API Server Running"));
 
 // STRIPE PAYMENT ROUTES
 app.post("/create-payment-intent", async (req, res) => {
+  if (!stripe) {
+    return res.status(503).json({ 
+      error: "Stripe not configured yet." 
+    });
+  }
   const { amount } = req.body;
   if (!amount || amount <= 0) return res.status(400).json({ error: "Invalid amount" });
 
