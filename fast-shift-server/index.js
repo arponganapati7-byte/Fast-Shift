@@ -18,7 +18,7 @@ app.use(express.json());
 // Initialize Firebase Admin
 const serviceAccount = JSON.parse(
 process.env.FIREBASE_SERVICE_ACCOUNT
-)
+);
 admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
 
 // MongoDB setup
