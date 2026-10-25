@@ -1,0 +1,34 @@
+﻿# Dependencies and build output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Environment variables and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Firebase service-account credentials
+firebase-admin-key.json
+**/firebase-admin-key.json
+*service-account*.json
+**/*service-account*.json
+
+# Local backup — never upload
+fast-shift-client-backup/
+
+# Logs and editor files
+*.log
+.vscode/
+.idea/
+.DS_Store
+
+# Preserved frontend Git history
+fast-shift-client-git-backup/
+
+# Preserved frontend Git history
+fast-shift-client-git-backup/
