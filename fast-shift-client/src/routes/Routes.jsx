@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import AuthLayout from "../layout/AuthLayout";
 import Register from "../pages/Authentication/Register";
+import SocialLogin from "../pages/Authentication/SocialLogin.jsx";
 import Coverage from "../pages/Coverage/Coverage";
 import PrivateRoutes from "./PrivateRoutes";
 import SendParcel from "../pages/sendParcel/SendParcel";
